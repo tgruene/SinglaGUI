@@ -1,0 +1,53 @@
+{ "distances":
+        [
+         { "displayed": "100cm",
+           "calibrated": 1710.0,
+           "unit": "mm"
+         },
+         { "displayed": "80cm",
+           "calibrated": 1370.0,
+           "unit": "mm"
+         },
+         { "displayed": "60cm",
+           "calibrated": 1030.0,
+           "unit": "mm"
+         },
+         { "displayed": "50cm",
+           "calibrated": 860.0,
+           "unit": "mm"
+         },
+         { "displayed": "40cm",
+            "calibrated": 645.0,
+           "unit": "mm"
+         },
+         { "displayed": "30cm",
+            "calibrated": 483.0,
+           "unit": "mm"
+         },
+         { "displayed": "25cm",
+           "calibrated": 402.0,
+           "unit": "mm"
+        }
+],
+  "TEM_IP": "temserver",
+  "TEM_PORT": 12345,
+
+  "SINGLA_IP": "singla-dcu",
+  "SINGLA_PORT":  80,
+  "SINGLA_VERSION": "1.8.0",
+  "SINGLA_STREAM_PORT": 9999,
+  "DCU_WAIT_TIME_SECS" : 5.0,
+  
+
+  "data_root": "/data/jungfrau/users/singla",
+  "work_dir_root": "~/univie/instruments/jem2100plus",
+
+  "XDS_template" : "/xtal/Integration/XDS/CCSA-templates/XDS-SINGLA.INP",
+
+  "FULLSCREEN": true,
+
+  "AUTO_INCREMENT_RECORD": true,
+  "AUTO_INCREMENT_STILL": false
+}
+
+
