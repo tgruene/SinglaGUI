@@ -30,3 +30,9 @@ requirements.txt
 samples
 TEM3.pyd
 VERSION
+inspectionProfiles
+misc.xml
+modules.xml
+singla-GUI.iml
+vcs.xml
+workspace.xml
