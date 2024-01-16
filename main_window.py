@@ -342,6 +342,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         frame_time = self.control.detector.get_config("frame_time", "detector")
         reply, ok = QInputDialog.getDouble(self, "Frame Time", "Enter frame time (seconds)", frame_time, 0.0003)
         if ok:
+            self.control.detector.set_config("count_time", reply, "detector")
             self.control.detector.set_config("frame_time", reply, "detector")
 
     @pyqtSlot()
