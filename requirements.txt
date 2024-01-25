@@ -1,0 +1,17 @@
+bitshuffle==0.5.1
+certifi==2023.11.17      
+charset-normalizer==3.3.2
+Cython==3.0.8
+h5py==3.10.0
+idna==3.6
+lz4==4.3.3
+numpy==1.26.3
+PyQt6==6.6.1
+PyQt6-Qt6==6.6.1
+PyQt6-sip==13.6.0
+pyqtgraph==0.13.3
+pyzmq==25.1.2
+requests==2.31.0
+scipy==1.11.4
+urllib3==2.1.0
+zmq==0.0.0

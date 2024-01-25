@@ -38,9 +38,6 @@ class StreamReceiver(QObject):
         socket = context.socket(zmq.PULL)
         socket.connect(f"tcp://{self.control.config['SINGLA_IP']}:{self.control.config['SINGLA_STREAM_PORT']}")
 
-        if socketlib.gethostname() == "A526-wirth":
-            return
-
         while True:
             packet = socket.recv()
             if packet[0] == 123:  # if the packet begins with "{" character:

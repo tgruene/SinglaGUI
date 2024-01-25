@@ -49,7 +49,7 @@ class Task(QObject):
             logging.error("Exception occurred in task " + self.task_name + ": " + traceback.format_exc())
             self.control.issue_message_box.emit("Error",
                                                 "Exception occurred in task " + self.task_name + ": " + str(exc),
-                                                QMessageBox.Warning)
+                                                QMessageBox.Icon.Warning)
         self.running = False
         logging.info("Finished task " + self.task_name)
         self.finished.emit()

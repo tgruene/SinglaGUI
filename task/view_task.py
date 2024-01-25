@@ -18,6 +18,7 @@ class ViewTask(Task):
         # Disable writing and setup for viewing
         self.control.detector.send_command("disarm")
         self.control.detector.set_config("mode", "disabled", "filewriter")
-        self.control.detector.set_config("nimages", 1000000, "detector")
+        frame_time = self.control.detector.get_config("frame_time", "detector")
+        self.control.detector.set_config("nimages", int(86400.0 / frame_time), "detector")
         self.control.arm()
         self.control.detector.send_command("trigger")

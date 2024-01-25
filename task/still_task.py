@@ -28,7 +28,7 @@ class StillTask(Task):
 
         if not (magnification and detector_distance):
             self.control.issue_message_box.emit("Magnification & Detector distance not set",
-                                                "Please set TEM mode quickly to 'DIFF' or 'MAG1'", QMessageBox.Warning)
+                                                "Please set TEM mode quickly to 'DIFF' or 'MAG1'", QMessageBox.Icon.Warning)
             return
 
         os.makedirs(filename, exist_ok=True)

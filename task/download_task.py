@@ -43,7 +43,7 @@ class DownloadTask(Task):
 
     def run(self):
         if not isinstance(self.control.last_task, RecordTask) or isinstance(self.control.last_task, StillTask):
-            self.control.issue_message_box.emit("Error", "Nothing to download", QMessageBox.Warning)
+            self.control.issue_message_box.emit("Error", "Nothing to download", QMessageBox.Icon.Warning)
             return
 
         sample_suffix = self.control.last_task.sample_name  # f"x{self.xtal_id}_ID-{self.arm_id}"

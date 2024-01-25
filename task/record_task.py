@@ -39,10 +39,9 @@ class RecordTask(Task):
 
         if not (magnification and self.detector_distance):
             self.control.issue_message_box.emit("Magnification & Detector distance not set",
-                                                "Please set TEM mode quickly to 'DIFF' or 'MAG1'", QMessageBox.Warning)
+                                                "Please set TEM mode quickly to 'DIFF' or 'MAG1'", QMessageBox.Icon.Warning)
             return
 
-        "Disarm Singla, enable filewriter, arm, and triffer"
         ft = self.control.detector.get_config("frame_time", "detector")
         self.control.detector.set_config("name_pattern", os.path.basename(filename), "filewriter")
         phi0 = self.control.tem_status["stage.GetPos"][3]
@@ -71,6 +70,7 @@ class RecordTask(Task):
                 f"corrected distance: {self.control.get_corrected_detector_distance(self.detector_distance)}\n")
             logfile.write("Comment: " + self.control.window.input_comment.toPlainText() + "\n")
 
+        #Disarm Singla, enable filewriter, arm, and trigger
         self.control.detector.send_command("disarm")
         self.control.detector.set_config("mode", "enabled", "filewriter")
 

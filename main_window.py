@@ -310,10 +310,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         show a message box (can be triggered from other threads)
         """
         msg_box = QMessageBox()
-        msg_box.setIcon(icon)
+        msg_box.setIcon(QMessageBox.Icon.Warning)
         msg_box.setText(text)
         msg_box.setWindowTitle(title)
-        msg_box.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+        msg_box.setStandardButtons(QMessageBox.StandardButton.Ok | QMessageBox.StandardButton.Cancel)
         msg_box.exec()
 
     @pyqtSlot()
@@ -322,7 +322,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         send the command 'initialize' to the detector
         """
         reply = QMessageBox.question(self, "Initialize detector", "Do you want to initialize the detector")
-        if reply == QMessageBox.Ok:
+        if reply == QMessageBox.StandardButton.Yes:
             self.control.detector.send_command("initialize")
 
     @pyqtSlot()
@@ -340,7 +340,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         Prompt frame time dialog
         """
         frame_time = self.control.detector.get_config("frame_time", "detector")
-        reply, ok = QInputDialog.getDouble(self, "Frame Time", "Enter frame time (seconds)", frame_time, 0.0003)
+        reply, ok = QInputDialog.getDouble(self, "Frame Time", "Enter frame time (seconds)", frame_time, 0.000222223, decimals=4)
         if ok:
             self.control.detector.set_config("count_time", reply, "detector")
             self.control.detector.set_config("frame_time", reply, "detector")

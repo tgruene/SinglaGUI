@@ -274,7 +274,7 @@ class ControlWorker(QObject):
         """
         if self.task.running and self.task.task_name != "View":
             self.issue_message_box.emit("Task Running", f"Task {self.task.task_name} already running",
-                                        QMessageBox.Warning)
+                                        QMessageBox.Icon.Warning)
             return
 
         task = DownloadTask(self, self.window.input_databasedir.text(), self.window.input_workbasedir.text())
