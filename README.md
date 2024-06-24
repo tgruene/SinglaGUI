@@ -1,5 +1,7 @@
 # Singla GUI - A graphical user interface for the SINGLA detector and TEM
-
+## License
+SINGLAGUI © 2023 by Julian Maisriml and Tim Gruene is licensed under Creative Commons Attribution 4.0 International 
+ 
 ## General usage:
 The current detector image is displayed in the stream window display as a grayscale image. Located next to the image is
 a histogram of the intensity data. There one can also set the contrast and overall brightness by moving the yellow
